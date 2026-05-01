@@ -1,6 +1,6 @@
 <div align="center">
   
-# ⚛️ ScienceSim
+# ScienceSim
 
 **Interactive Physics & Chemistry Virtual Labs**
 
@@ -15,44 +15,44 @@
 
 ---
 
-## 📖 About The Project
+## About The Project
 
 **ScienceSim** is a high-fidelity, real-time interactive virtual laboratory designed to bring scientific theories to life. Experience physics and chemistry concepts through stunning, frame-rate independent simulations that are both educational and visually engaging.
 
 Built with a premium modern aesthetic, ScienceSim offers students and educators an accessible way to explore complex mechanics, thermodynamics, and chemical reactions visually.
 
-### ✨ Key Features
+### Key Features
 
-* **🎯 Real-Time Physics Engines:** Accurate simulations with proper SI unit scaling.
-* **🎨 Beautiful Visuals:** Stunning graphics, dynamic grids, smooth animations, and glassmorphic UI.
-* **🎛️ Full Control:** Intuitive parameter controls with instant visual feedback.
-* **📊 Live Data:** Real-time measurements, graphs, and calculations displayed as you experiment.
-* **📱 Fully Responsive:** Optimized for both desktop and mobile learning.
+* **Real-Time Physics Engines:** Accurate simulations with proper SI unit scaling.
+* **Beautiful Visuals:** Stunning graphics, dynamic grids, smooth animations, and glassmorphic UI.
+* **Full Control:** Intuitive parameter controls with instant visual feedback.
+* **Live Data:** Real-time measurements, graphs, and calculations displayed as you experiment.
+* **Fully Responsive:** Optimized for both desktop and mobile learning.
 
-## 🔬 Subjects Covered
+## Subjects Covered
 
-### 🌌 Physics
+### Physics
 Explore the fundamental laws of nature:
 - Projectile Motion
 - Pendulum Dynamics
 - Wave Mechanics
 - Thermodynamics
 
-### 🧪 Chemistry
+### Chemistry
 Discover the molecular world:
 - Reaction Rates & Kinetics
 - pH Scale & Titration
 - Molecular Structures
 
-## 🚀 Live Demo
+## Live Demo
 
 The project is hosted live on Vercel. 
 
-👉 **[Experience ScienceSim Here](https://web-project-vert-five.vercel.app/)**
+**[Experience ScienceSim Here](https://web-project-vert-five.vercel.app/)**
 
 *(Note: Replace the link above with the Production URL you received in your terminal!)*
 
-## 🛠️ Built With
+## Built With
 
 This project is built using purely vanilla web technologies to ensure maximum performance and minimal overhead:
 
@@ -61,7 +61,7 @@ This project is built using purely vanilla web technologies to ensure maximum pe
 * **Vanilla JavaScript (ES6+)** - Physics engine, DOM manipulation, and interactive logic.
 * **Google Fonts** - Inter and Outfit for sleek, modern typography.
 
-## 💻 Local Setup
+## Local Setup
 
 Want to run the simulations locally? It's incredibly simple!
 
@@ -81,7 +81,7 @@ Want to run the simulations locally? It's incredibly simple!
 4. **Open your browser:**
    Navigate to `http://localhost:8000`
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
@@ -91,7 +91,7 @@ Contributions are what make the open source community such an amazing place to l
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📄 License
+## License
 
 Distributed under the MIT License. See `LICENSE` for more information.
 
