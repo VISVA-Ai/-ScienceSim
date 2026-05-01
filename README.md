@@ -9,7 +9,7 @@
 [![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
 [![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
-[View Live Demo](YOUR_VERCEL_LINK_HERE) • [Report Bug](YOUR_GITHUB_REPO_LINK_HERE/issues) • [Request Feature](YOUR_GITHUB_REPO_LINK_HERE/issues)
+[View Live Demo](YOUR_VERCEL_LINK_HERE) • [Report Bug](https://github.com/VISVA-Ai/-ScienceSim/issues) • [Request Feature](https://github.com/VISVA-Ai/-ScienceSim/issues)
 
 </div>
 
@@ -67,7 +67,7 @@ Want to run the simulations locally? It's incredibly simple!
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/your-username/ScienceSim.git
+   git clone https://github.com/VISVA-Ai/-ScienceSim.git
    ```
 2. **Navigate to the directory:**
    ```bash
