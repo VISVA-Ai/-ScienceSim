@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gas Laws - ScienceSim</title>
+    <meta name="description"
+        content="Interactive Gas Laws simulation. Explore the relationship between pressure, volume, and temperature.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+
+<body class="chemistry-page">
+    <div class="bg-mesh"></div>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../../index.html" class="nav-logo">
+                <span class="logo-icon">⚛</span>
+                <span class="logo-text">ScienceSim</span>
+            </a>
+            <div class="nav-links">
+                <a href="../../index.html" class="nav-link">Home</a>
+                <a href="../../physics.html" class="nav-link">Physics</a>
+                <a href="../../chemistry.html" class="nav-link active">Chemistry</a>
+                <a href="../../about.html" class="nav-link">About</a>
+            </div>
+            <button class="nav-mobile-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="sim-layout">
+        <aside class="sim-sidebar">
+            <a href="../../chemistry.html" class="btn btn-secondary" style="margin-bottom: 20px; font-size: 0.875rem;">
+                ← Back to Chemistry Lab
+            </a>
+
+            <h1 class="sim-title">Gas Laws</h1>
+            <p class="sim-description">
+                Investigate Ideal Gas Laws by changing volume, temperature, and quantity of particles. 
+                Watch how the pressure gauge responds in real-time.
+            </p>
+
+            <div class="control-group">
+                <h4 class="control-group-title">Container Controls</h4>
+                
+                <div class="control-item">
+                    <label class="control-label">
+                        <span>Volume (V)</span>
+                        <span class="control-value" id="volume-value">1.0 L</span>
+                    </label>
+                    <input type="range" id="volume-slider" min="0.2" max="1.0" value="1.0" step="0.01">
+                </div>
+
+                <div class="control-item">
+                    <label class="control-label">
+                        <span>Temperature (T)</span>
+                        <span class="control-value" id="temp-value">300 K</span>
+                    </label>
+                    <input type="range" id="temp-slider" min="100" max="600" value="300" step="1">
+                </div>
+            </div>
+
+            <div class="control-group">
+                <h4 class="control-group-title">Add / Remove Gas</h4>
+                <div style="display: flex; gap: 8px;">
+                    <button class="sim-btn sim-btn-primary" id="pump-btn" style="flex: 1;">💨 Pump</button>
+                    <button class="sim-btn sim-btn-secondary" id="release-btn" style="flex: 1;">🌬 Release</button>
+                </div>
+            </div>
+
+            <div class="data-display" style="margin-top: 24px;">
+                <h4 class="control-group-title" style="padding: 0 0 12px 0; margin: 0;">Measured Values</h4>
+                <div class="data-item">
+                    <span class="data-label">Pressure (P)</span>
+                    <span class="data-value" id="pressure-data" style="color: var(--chemistry-glow);">1.0 atm</span>
+                </div>
+                <div class="data-item">
+                    <span class="data-label">Particle Count (n)</span>
+                    <span class="data-value" id="count-data">50</span>
+                </div>
+            </div>
+
+            <div class="sim-buttons">
+                <button class="sim-btn sim-btn-secondary" id="reset-btn" style="flex: 1;">
+                    ↺ Reset Simulation
+                </button>
+            </div>
+
+            <div class="control-group" style="margin-top: 16px;">
+                <h4 class="control-group-title">Ideal Gas Law</h4>
+                <div style="font-size: 0.8rem; color: var(--text-muted); font-family: 'Outfit', sans-serif;">
+                    P·V = n·R·T
+                </div>
+            </div>
+        </aside>
+
+        <div class="sim-viewport">
+            <div class="sim-container" id="canvas-container"></div>
+        </div>
+    </div>
+
+    <script src="../../js/utils.js"></script>
+    <script src="gas-laws.js"></script>
+</body>
+
+</html>

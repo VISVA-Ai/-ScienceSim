@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elastic Collision - ScienceSim</title>
+    <meta name="description"
+        content="Interactive elastic collision simulation. Explore conservation of momentum and kinetic energy.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+
+<body class="physics-page">
+    <div class="bg-mesh"></div>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../../index.html" class="nav-logo">
+                <span class="logo-icon">⚛</span>
+                <span class="logo-text">ScienceSim</span>
+            </a>
+            <div class="nav-links">
+                <a href="../../index.html" class="nav-link">Home</a>
+                <a href="../../physics.html" class="nav-link active">Physics</a>
+                <a href="../../chemistry.html" class="nav-link">Chemistry</a>
+                <a href="../../about.html" class="nav-link">About</a>
+            </div>
+            <button class="nav-mobile-toggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="sim-layout">
+        <aside class="sim-sidebar">
+            <a href="../../physics.html" class="btn btn-secondary" style="margin-bottom: 20px; font-size: 0.875rem;">
+                ← Back to Physics Lab
+            </a>
+
+            <h1 class="sim-title">Elastic Collision</h1>
+            <p class="sim-description">
+                Observe 1D elastic collisions between two objects. Both momentum and kinetic energy
+                are conserved. Adjust masses and velocities to explore different outcomes.
+            </p>
+
+            <div class="control-group">
+                <h4 class="control-group-title">Object 1 (Blue)</h4>
+                <div class="control-item">
+                    <label class="control-label">
+                        <span>Mass (m₁)</span>
+                        <span class="control-value" id="mass1-value">2.0 kg</span>
+                    </label>
+                    <input type="range" id="mass1-slider" min="0.5" max="10" value="2" step="0.1">
+                </div>
+                <div class="control-item">
+                    <label class="control-label">
+                        <span>Velocity (v₁)</span>
+                        <span class="control-value" id="vel1-value">5.0 m/s</span>
+                    </label>
+                    <input type="range" id="vel1-slider" min="-10" max="10" value="5" step="0.1">
+                </div>
+            </div>
+
+            <div class="control-group">
+                <h4 class="control-group-title">Object 2 (Green)</h4>
+                <div class="control-item">
+                    <label class="control-label">
+                        <span>Mass (m₂)</span>
+                        <span class="control-value" id="mass2-value">3.0 kg</span>
+                    </label>
+                    <input type="range" id="mass2-slider" min="0.5" max="10" value="3" step="0.1">
+                </div>
+                <div class="control-item">
+                    <label class="control-label">
+                        <span>Velocity (v₂)</span>
+                        <span class="control-value" id="vel2-value">-3.0 m/s</span>
+                    </label>
+                    <input type="range" id="vel2-slider" min="-10" max="10" value="-3" step="0.1">
+                </div>
+            </div>
+
+            <div class="sim-buttons">
+                <button class="sim-btn sim-btn-primary" id="start-btn">▶ Start</button>
+                <button class="sim-btn sim-btn-secondary" id="reset-btn">↺ Reset</button>
+            </div>
+
+            <div class="data-display" style="margin-top: 24px;">
+                <h4 class="control-group-title" style="padding: 0 0 12px 0; margin: 0;">Live Data</h4>
+                <div class="data-item">
+                    <span class="data-label">Total Momentum</span>
+                    <span class="data-value" id="data-momentum">— kg·m/s</span>
+                </div>
+                <div class="data-item">
+                    <span class="data-label">Total KE</span>
+                    <span class="data-value" id="data-ke">— J</span>
+                </div>
+                <div class="data-item">
+                    <span class="data-label">v₁' (after)</span>
+                    <span class="data-value" id="data-v1f">— m/s</span>
+                </div>
+                <div class="data-item">
+                    <span class="data-label">v₂' (after)</span>
+                    <span class="data-value" id="data-v2f">— m/s</span>
+                </div>
+                <div class="data-item">
+                    <span class="data-label">Status</span>
+                    <span class="data-value" id="data-status">Ready</span>
+                </div>
+            </div>
+
+            <div class="control-group" style="margin-top: 16px;">
+                <h4 class="control-group-title">Formulas</h4>
+                <div style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.8;">
+                    <p>v₁' = ((m₁-m₂)v₁ + 2m₂v₂) / (m₁+m₂)</p>
+                    <p>v₂' = ((m₂-m₁)v₂ + 2m₁v₁) / (m₁+m₂)</p>
+                    <p>Σp = m₁v₁ + m₂v₂ = const</p>
+                    <p>ΣKE = ½m₁v₁² + ½m₂v₂² = const</p>
+                </div>
+            </div>
+        </aside>
+
+        <div class="sim-viewport">
+            <div class="sim-container" id="canvas-container"></div>
+        </div>
+    </div>
+
+    <script src="../../js/utils.js"></script>
+    <script src="collision.js"></script>
+</body>
+
+</html>

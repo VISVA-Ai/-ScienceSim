@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pH Scale - ScienceSim</title>
+    <meta name="description"
+        content="Interactive pH scale simulation. Explore acids, bases, and concentrations.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+    <style>
+        .ph-meter {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.6);
+            border: 2px solid var(--glass-border);
+            border-radius: var(--radius-md);
+            padding: 15px 25px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            z-index: 10;
+        }
+
+        .ph-display {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            margin: 5px 0;
+            color: #fff;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+        }
+
+        .liquid-select {
+            width: 100%;
+            padding: 12px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-md);
+            color: var(--text-primary);
+            font-family: inherit;
+            margin-bottom: 16px;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .liquid-select:focus {
+            border-color: var(--chemistry);
+        }
+
+        .concentration-box {
+            background: var(--glass-bg);
+            border-radius: var(--radius-md);
+            padding: 16px;
+            margin-top: 16px;
+        }
+
+        .conc-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-size: 0.85rem;
+        }
+
+        .conc-val {
+            font-family: monospace;
+            color: var(--chemistry-glow);
+        }
+    </style>
+</head>
+
+<body class="chemistry-page">
+    <div class="bg-mesh"></div>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../../index.html" class="nav-logo">
+                <span class="logo-icon">⚛</span>
+                <span class="logo-text">ScienceSim</span>
+            </a>
+            <div class="nav-links">
+                <a href="../../index.html" class="nav-link">Home</a>
+                <a href="../../physics.html" class="nav-link">Physics</a>
+                <a href="../../chemistry.html" class="nav-link active">Chemistry</a>
+                <a href="../../about.html" class="nav-link">About</a>
+            </div>
+            <button class="nav-mobile-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="sim-layout">
+        <aside class="sim-sidebar">
+            <a href="../../chemistry.html" class="btn btn-secondary" style="margin-bottom: 20px; font-size: 0.875rem;">
+                ← Back to Chemistry Lab
+            </a>
+
+            <h1 class="sim-title">pH Scale</h1>
+            <p class="sim-description">
+                Explore the acidity and basicity of everyday solutions. 
+                Measure the pH and see the concentration of hydronium and hydroxide ions.
+            </p>
+
+            <div class="control-group">
+                <h4 class="control-group-title">Solution Selection</h4>
+                <select id="substance-select" class="liquid-select">
+                    <option value="0.5">Battery Acid</option>
+                    <option value="2.0">Lemon Juice</option>
+                    <option value="3.5">Orange Juice</option>
+                    <option value="5.0">Coffee</option>
+                    <option value="6.5">Milk</option>
+                    <option value="7.0" selected>Pure Water</option>
+                    <option value="7.4">Blood</option>
+                    <option value="8.5">Baking Soda</option>
+                    <option value="10.0">Hand Soap</option>
+                    <option value="11.5">Ammonia</option>
+                    <option value="13.0">Bleach</option>
+                    <option value="14.0">Drain Cleaner</option>
+                </select>
+
+                <div class="control-item">
+                    <label class="control-label">
+                        <span>Dilution (Add/Remove Water)</span>
+                        <span class="control-value" id="dilution-value">1.0x</span>
+                    </label>
+                    <input type="range" id="dilution-slider" min="0.1" max="2.0" value="1.0" step="0.01">
+                </div>
+            </div>
+
+            <div class="concentration-box">
+                <h4 class="control-group-title" style="margin-bottom: 12px;">Concentration (mol/L)</h4>
+                <div class="conc-item">
+                    <span>[H₃O⁺]</span>
+                    <span class="conc-val" id="h-conc">1.0e-7</span>
+                </div>
+                <div class="conc-item">
+                    <span>[OH⁻]</span>
+                    <span class="conc-val" id="oh-conc">1.0e-7</span>
+                </div>
+            </div>
+
+            <div class="sim-buttons">
+                <button class="sim-btn sim-btn-secondary" id="reset-btn" style="flex: 1;">
+                    ↺ Reset Solution
+                </button>
+            </div>
+
+            <div class="control-group" style="margin-top: 16px;">
+                <h4 class="control-group-title">Key Information</h4>
+                <div style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.8;">
+                    <p>pH = −log₁₀[H₃O⁺]</p>
+                    <p>[H₃O⁺][OH⁻] = 10⁻¹⁴</p>
+                    <p>pH < 7 is Acidic</p>
+                    <p>pH > 7 is Basic</p>
+                </div>
+            </div>
+        </aside>
+
+        <div class="sim-viewport">
+            <div class="ph-meter">
+                <div style="font-size: 0.75rem; color: var(--text-muted); letter-spacing: 0.1em; text-transform: uppercase;">pH Meter</div>
+                <div class="ph-display" id="ph-val">7.00</div>
+                <div id="ph-category" style="font-weight: 600; color: var(--chemistry-glow);">Neutral</div>
+            </div>
+
+            <div class="sim-container" id="canvas-container"></div>
+        </div>
+    </div>
+
+    <script src="../../js/utils.js"></script>
+    <script src="ph-scale.js"></script>
+</body>
+
+</html>

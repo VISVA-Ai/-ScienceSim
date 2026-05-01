@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chemistry Lab - ScienceSim</title>
+    <meta name="description"
+        content="Explore chemistry concepts through interactive simulations including reaction rates, pH scales, titration, and more.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="chemistry-page">
+    <!-- Animated Background -->
+    <div class="bg-mesh"></div>
+    <div class="bg-glow bg-glow-1" style="background: #10b981;"></div>
+    <div class="bg-glow bg-glow-2" style="background: #059669;"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-icon">⚛</span>
+                <span class="logo-text">ScienceSim</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="physics.html" class="nav-link">Physics</a>
+                <a href="chemistry.html" class="nav-link active">Chemistry</a>
+                <a href="about.html" class="nav-link">About</a>
+            </div>
+            <button class="nav-mobile-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hub Content -->
+    <main class="hub-page">
+        <header class="hub-header">
+            <h1 class="hub-title">
+                <span class="gradient-text">Chemistry</span> Lab
+            </h1>
+            <p class="hub-description">
+                Discover the molecular world through virtual experiments.
+                Visualize reactions, explore structures, and master chemical concepts.
+            </p>
+        </header>
+
+        <div class="sim-grid">
+            <!-- Reaction Rates -->
+            <a href="simulations/chemistry/reaction-rates.html" class="sim-card">
+                <div class="sim-card-preview">⚗️</div>
+                <h3 class="sim-card-title">Reaction Rates</h3>
+                <p class="sim-card-description">
+                    Explore how temperature, concentration, and catalysts
+                    affect the speed of chemical reactions.
+                </p>
+                <span class="sim-card-btn">
+                    Launch Simulation
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </span>
+            </a>
+
+            <!-- pH Scale -->
+            <a href="simulations/chemistry/ph-scale.html" class="sim-card">
+                <div class="sim-card-preview">🧪</div>
+                <h3 class="sim-card-title">pH Scale</h3>
+                <p class="sim-card-description">
+                    Understand acids and bases. Test different solutions and
+                    visualize their position on the pH scale.
+                </p>
+                <span class="sim-card-btn">
+                    Launch Simulation
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </span>
+            </a>
+
+            <!-- Titration -->
+            <a href="simulations/chemistry/titration.html" class="sim-card">
+                <div class="sim-card-preview">💧</div>
+                <h3 class="sim-card-title">Acid-Base Titration</h3>
+                <p class="sim-card-description">
+                    Perform virtual titrations and find equivalence points.
+                    Practice stoichiometric calculations.
+                </p>
+                <span class="sim-card-btn">
+                    Launch Simulation
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </span>
+            </a>
+
+            <!-- Molecular Builder -->
+            <a href="simulations/chemistry/molecules.html" class="sim-card">
+                <div class="sim-card-preview">🔬</div>
+                <h3 class="sim-card-title">Molecular Structure</h3>
+                <p class="sim-card-description">
+                    Build molecules and explore 3D structures. Understand
+                    bonding, geometry, and polarity.
+                </p>
+                <span class="sim-card-btn">
+                    Launch Simulation
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </span>
+            </a>
+
+            <!-- Gas Laws -->
+            <a href="simulations/chemistry/gas-laws.html" class="sim-card">
+                <div class="sim-card-preview">🎈</div>
+                <h3 class="sim-card-title">Gas Laws</h3>
+                <p class="sim-card-description">
+                    Explore Boyle's, Charles's, and the Ideal Gas Law through
+                    interactive pressure-volume-temperature simulations.
+                </p>
+                <span class="sim-card-btn">
+                    Launch Simulation
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </span>
+            </a>
+
+            <!-- Electrochemistry -->
+            <a href="simulations/chemistry/electrochemistry.html" class="sim-card">
+                <div class="sim-card-preview">🔋</div>
+                <h3 class="sim-card-title">Electrochemistry</h3>
+                <p class="sim-card-description">
+                    Build galvanic cells and understand redox reactions.
+                    Calculate cell potentials and predict reactions.
+                </p>
+                <span class="sim-card-btn">
+                    Launch Simulation
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </span>
+            </a>
+
+            <!-- Equilibrium -->
+            <a href="simulations/chemistry/equilibrium.html" class="sim-card">
+                <div class="sim-card-preview">⚖️</div>
+                <h3 class="sim-card-title">Chemical Equilibrium</h3>
+                <p class="sim-card-description">
+                    Explore Le Chatelier's Principle. See how changes in
+                    conditions shift equilibrium positions.
+                </p>
+                <span class="sim-card-btn">
+                    Launch Simulation
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </span>
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <span class="logo-icon">⚛</span>
+                <span class="logo-text">ScienceSim</span>
+            </div>
+            <p class="footer-tagline">Making science accessible and engaging for everyone.</p>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="physics.html">Physics</a>
+                <a href="chemistry.html">Chemistry</a>
+                <a href="about.html">About</a>
+            </div>
+            <p class="footer-copy">© 2024 ScienceSim. Built for learning.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

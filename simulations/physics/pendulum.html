@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Pendulum - ScienceSim</title>
+    <meta name="description"
+        content="Interactive simple pendulum simulation. Study periodic motion and energy conservation.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+
+<body class="physics-page">
+    <!-- Animated Background -->
+    <div class="bg-mesh"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../../index.html" class="nav-logo">
+                <span class="logo-icon">⚛</span>
+                <span class="logo-text">ScienceSim</span>
+            </a>
+            <div class="nav-links">
+                <a href="../../index.html" class="nav-link">Home</a>
+                <a href="../../physics.html" class="nav-link active">Physics</a>
+                <a href="../../chemistry.html" class="nav-link">Chemistry</a>
+                <a href="../../about.html" class="nav-link">About</a>
+            </div>
+            <button class="nav-mobile-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Simulation Layout -->
+    <div class="sim-layout">
+        <!-- Sidebar Controls -->
+        <aside class="sim-sidebar">
+            <a href="../../physics.html" class="btn btn-secondary" style="margin-bottom: 20px; font-size: 0.875rem;">
+                ← Back to Physics Lab
+            </a>
+
+            <h1 class="sim-title">Simple Pendulum</h1>
+            <p class="sim-description">
+                Explore the harmonic motion of a pendulum. Adjust the rope length, 
+                gravity, and bob mass to see their effects on the period.
+            </p>
+
+            <!-- Parameters -->
+            <div class="control-group">
+                <h4 class="control-group-title">Simulation Parameters</h4>
+
+                <div class="control-item">
+                    <label class="control-label">
+                        <span>String Length (L)</span>
+                        <span class="control-value" id="length-value">1.5 m</span>
+                    </label>
+                    <input type="range" id="length-slider" min="0.5" max="2.5" value="1.5" step="0.1">
+                </div>
+
+                <div class="control-item">
+                    <label class="control-label">
+                        <span>Gravity (g)</span>
+                        <span class="control-value" id="gravity-value">9.8 m/s²</span>
+                    </label>
+                    <input type="range" id="gravity-slider" min="1" max="20" value="9.8" step="0.1">
+                </div>
+
+                <div class="control-item">
+                    <label class="control-label">
+                        <span>Bob Mass (m)</span>
+                        <span class="control-value" id="mass-value">1.0 kg</span>
+                    </label>
+                    <input type="range" id="mass-slider" min="0.1" max="5" value="1.0" step="0.1">
+                </div>
+
+                <div class="control-item">
+                    <label class="control-label">
+                        <span>Damping</span>
+                        <span class="control-value" id="damping-value">0.05</span>
+                    </label>
+                    <input type="range" id="damping-slider" min="0" max="0.5" value="0.05" step="0.01">
+                </div>
+            </div>
+
+            <!-- Controls -->
+            <div class="sim-buttons">
+                <button class="sim-btn sim-btn-primary" id="play-pause-btn">
+                    <span>▶ Play</span>
+                </button>
+                <button class="sim-btn sim-btn-secondary" id="reset-btn">
+                    ↺ Reset
+                </button>
+            </div>
+
+            <!-- Real-time Data -->
+            <div class="data-display" style="margin-top: 24px;">
+                <h4 class="control-group-title" style="padding: 0 0 12px 0; margin: 0;">Oscillation Stats</h4>
+                <div class="data-item">
+                    <span class="data-label">Period (T)</span>
+                    <span class="data-value" id="period-data">... s</span>
+                </div>
+                <div class="data-item">
+                    <span class="data-label">Angle (θ)</span>
+                    <span class="data-value" id="angle-data">0.00°</span>
+                </div>
+                <div class="data-item">
+                    <span class="data-label">Angular Vel (ω)</span>
+                    <span class="data-value" id="omega-data">0.00 rad/s</span>
+                </div>
+            </div>
+
+            <!-- Formulas -->
+            <div class="control-group" style="margin-top: 16px;">
+                <h4 class="control-group-title">Formulas</h4>
+                <div style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.8;">
+                    <p>θ'' = −(g/L) sin θ</p>
+                    <p>T ≈ 2π √(L/g)</p>
+                    <p>E = KE + PE</p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Canvas Viewport -->
+        <div class="sim-viewport">
+            <!-- Energy Bar Chart Overlay -->
+            <div style="position: absolute; top: 20px; left: 20px; width: 120px; z-index: 10;">
+                <div class="control-group-title" style="margin-bottom: 8px; font-size: 0.6rem;">Energy Monitor</div>
+                <div style="display: flex; gap: 8px; height: 100px; align-items: flex-end;">
+                    <div style="flex: 1; background: var(--physics); border-radius: 4px; transition: height 0.05s linear;" id="ke-bar"></div>
+                    <div style="flex: 1; background: var(--chemistry); border-radius: 4px; transition: height 0.05s linear;" id="pe-bar"></div>
+                </div>
+                <div style="display: flex; gap: 8px; margin-top: 4px; font-size: 0.6rem; color: var(--text-muted); text-align: center;">
+                    <div style="flex: 1;">KE</div>
+                    <div style="flex: 1;">PE</div>
+                </div>
+            </div>
+
+            <div class="sim-container" id="canvas-container"></div>
+        </div>
+    </div>
+
+    <script src="../../js/utils.js"></script>
+    <script src="pendulum.js"></script>
+</body>
+
+</html>

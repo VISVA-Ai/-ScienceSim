@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reaction Rates - ScienceSim</title>
+    <meta name="description"
+        content="Interactive chemistry simulation. Explore how temperature, concentration, and other factors affect the rate of chemical reactions.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+    <style>
+        .chemistry-page .sim-title {
+            color: var(--chemistry);
+        }
+
+        .chemistry-page .sim-sidebar {
+            border-right: 1px solid var(--chemistry-glow);
+        }
+
+        .chemistry-page .sim-btn-primary {
+            background: var(--chemistry);
+        }
+
+        .chemistry-page .sim-btn-primary:hover {
+            background: var(--chemistry-glow);
+        }
+
+        .chemistry-page .control-value {
+            color: var(--chemistry);
+        }
+
+        /* Chemistry specific slider */
+        .chemistry-page input[type="range"]::-webkit-slider-thumb {
+            background: var(--chemistry);
+            box-shadow: 0 0 10px var(--chemistry);
+        }
+
+        .chemistry-page input[type="range"]::-moz-range-thumb {
+            background: var(--chemistry);
+            box-shadow: 0 0 10px var(--chemistry);
+        }
+    </style>
+</head>
+
+<body class="chemistry-page">
+    <!-- Animated Background -->
+    <div class="bg-mesh"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../../index.html" class="nav-logo">
+                <span class="logo-icon">⚛</span>
+                <span class="logo-text">ScienceSim</span>
+            </a>
+            <div class="nav-links">
+                <a href="../../index.html" class="nav-link">Home</a>
+                <a href="../../physics.html" class="nav-link">Physics</a>
+                <a href="../../chemistry.html" class="nav-link active">Chemistry</a>
+                <a href="../../about.html" class="nav-link">About</a>
+            </div>
+            <button class="nav-mobile-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Simulation Layout -->
+    <div class="sim-layout">
+        <!-- Sidebar Controls -->
+        <aside class="sim-sidebar">
+            <a href="../../chemistry.html" class="btn btn-secondary" style="margin-bottom: 20px; font-size: 0.875rem;">
+                ← Back to Chemistry Lab
+            </a>
+
+            <h1 class="sim-title">Reaction Rates</h1>
+            <p class="sim-description">
+                Observe how reactant particles collide and react.
+                Adjust temperature and concentration to see their effect on reaction speed.
+            </p>
+
+            <!-- Reaction Conditions -->
+            <div class="control-group">
+                <h4 class="control-group-title">Conditions</h4>
+
+                <div class="control-item">
+                    <label class="control-label">
+                        <span>Temperature (T)</span>
+                        <span class="control-value" id="temp-value">300 K</span>
+                    </label>
+                    <input type="range" id="temp-slider" min="100" max="1000" value="300" step="10">
+                </div>
+
+                <div class="control-item">
+                    <label class="control-label">
+                        <span>Concentration [A]</span>
+                        <span class="control-value" id="conc-value">50</span>
+                    </label>
+                    <input type="range" id="conc-slider" min="10" max="200" value="50" step="1">
+                </div>
+            </div>
+
+            <!-- Controls -->
+            <div class="sim-buttons">
+                <button class="sim-btn sim-btn-primary" id="start-btn">
+                    ⚗️ Start Reaction
+                </button>
+                <button class="sim-btn sim-btn-secondary" id="reset-btn">
+                    ↺ Reset
+                </button>
+            </div>
+
+            <!-- Real-time Data -->
+            <div class="data-display" style="margin-top: 24px;">
+                <h4 class="control-group-title" style="padding: 0 0 12px 0; margin: 0;">Live Data</h4>
+                <div class="data-item">
+                    <span class="data-label">Time Elapsed</span>
+                    <span class="data-value" id="data-time">0.0 s</span>
+                </div>
+                <div class="data-item">
+                    <span class="data-label">Reactants Left</span>
+                    <span class="data-value" id="data-reactants">100%</span>
+                </div>
+                <div class="data-item">
+                    <span class="data-label">Products Formed</span>
+                    <span class="data-value" id="data-products">0%</span>
+                </div>
+                <div class="data-item">
+                    <span class="data-label">Reaction Rate</span>
+                    <span class="data-value" id="data-rate">0.0 /s</span>
+                </div>
+            </div>
+
+            <!-- Concept -->
+            <div class="control-group" style="margin-top: 16px;">
+                <h4 class="control-group-title">Concept</h4>
+                <div style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.8;">
+                    <p>Particles must collide with sufficient energy (Activation Energy) to react.</p>
+                    <p>Higher T → Faster particles → More collisions.</p>
+                    <p>Higher Conc → More particles → More collisions.</p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Canvas Viewport -->
+        <div class="sim-viewport">
+            <div class="sim-container" id="canvas-container"></div>
+        </div>
+    </div>
+
+    <script src="../../js/utils.js"></script>
+    <script src="reaction-rates.js"></script>
+</body>
+
+</html>

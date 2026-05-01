@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScienceSim - Interactive Physics & Chemistry Virtual Labs</title>
+    <meta name="description"
+        content="Experience science like never before with real-time, high-fidelity interactive simulations for Physics and Chemistry.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Animated Background -->
+    <div class="bg-mesh"></div>
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+    <div class="bg-glow bg-glow-3"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-icon">⚛</span>
+                <span class="logo-text">ScienceSim</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="physics.html" class="nav-link">Physics</a>
+                <a href="chemistry.html" class="nav-link">Chemistry</a>
+                <a href="about.html" class="nav-link">About</a>
+            </div>
+            <button class="nav-mobile-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">🔬 Virtual Laboratory Experience</span>
+            <h1 class="hero-title">
+                <span class="gradient-text">Interactive Science</span>
+                <br>Learning
+            </h1>
+            <p class="hero-description">
+                Experience physics and chemistry concepts through stunning real-time simulations.
+                Watch theories come alive with our high-fidelity virtual experiments.
+            </p>
+            <div class="hero-cta">
+                <a href="physics.html" class="btn btn-primary">
+                    <span>Start Exploring</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </a>
+                <a href="about.html" class="btn btn-secondary">Learn More</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">15+</span>
+                    <span class="stat-label">Simulations</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Interactive</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">Free</span>
+                    <span class="stat-label">Forever</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="orbit-container">
+                <div class="nucleus"></div>
+                <div class="electron-orbit orbit-1">
+                    <div class="electron"></div>
+                </div>
+                <div class="electron-orbit orbit-2">
+                    <div class="electron"></div>
+                </div>
+                <div class="electron-orbit orbit-3">
+                    <div class="electron"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Subject Cards Section -->
+    <section class="subjects">
+        <div class="section-header">
+            <h2 class="section-title">Choose Your Subject</h2>
+            <p class="section-description">Dive deep into the world of science with our interactive labs</p>
+        </div>
+        <div class="subject-grid">
+            <!-- Physics Card -->
+            <a href="physics.html" class="subject-card physics-card">
+                <div class="card-glow"></div>
+                <div class="card-icon">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.5">
+                        <circle cx="12" cy="12" r="10" />
+                        <path
+                            d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                        <path d="M2 12h20" />
+                    </svg>
+                </div>
+                <h3 class="card-title">Physics</h3>
+                <p class="card-description">
+                    Explore mechanics, waves, thermodynamics, and more through interactive simulations.
+                </p>
+                <div class="card-topics">
+                    <span class="topic-tag">Projectile Motion</span>
+                    <span class="topic-tag">Pendulum</span>
+                    <span class="topic-tag">Waves</span>
+                </div>
+                <div class="card-footer">
+                    <span>8 Simulations</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </div>
+            </a>
+
+            <!-- Chemistry Card -->
+            <a href="chemistry.html" class="subject-card chemistry-card">
+                <div class="card-glow"></div>
+                <div class="card-icon">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.5">
+                        <path d="M9 3h6v8l4 9H5l4-9V3z" />
+                        <path d="M9 3h6" />
+                        <path d="M7 17h10" />
+                    </svg>
+                </div>
+                <h3 class="card-title">Chemistry</h3>
+                <p class="card-description">
+                    Discover chemical reactions, molecular structures, and reaction kinetics visually.
+                </p>
+                <div class="card-topics">
+                    <span class="topic-tag">Reaction Rates</span>
+                    <span class="topic-tag">pH Scale</span>
+                    <span class="topic-tag">Titration</span>
+                </div>
+                <div class="card-footer">
+                    <span>7 Simulations</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="section-header">
+            <h2 class="section-title">Why ScienceSim?</h2>
+            <p class="section-description">Built for the next generation of scientists</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3>Real-Time Physics</h3>
+                <p>Accurate physics engines with proper SI unit scaling and frame-rate independent simulations.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎨</div>
+                <h3>Beautiful Visuals</h3>
+                <p>Stunning graphics with smooth animations, dynamic grids, and trajectory predictions.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎛️</div>
+                <h3>Full Control</h3>
+                <p>Adjust every parameter with intuitive controls and see instant visual feedback.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Live Data</h3>
+                <p>Real-time measurements, graphs, and calculations displayed as you experiment.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <span class="logo-icon">⚛</span>
+                <span class="logo-text">ScienceSim</span>
+            </div>
+            <p class="footer-tagline">Making science accessible and engaging for everyone.</p>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="physics.html">Physics</a>
+                <a href="chemistry.html">Chemistry</a>
+                <a href="about.html">About</a>
+            </div>
+            <p class="footer-copy">© 2024 ScienceSim. Built for learning.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

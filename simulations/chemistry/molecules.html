@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Molecular Structure - ScienceSim</title>
+    <meta name="description" content="Interactive molecular structure viewer. Explore 2D ball-and-stick models of common molecules.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body class="chemistry-page">
+    <div class="bg-mesh"></div>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../../index.html" class="nav-logo"><span class="logo-icon">⚛</span><span class="logo-text">ScienceSim</span></a>
+            <div class="nav-links">
+                <a href="../../index.html" class="nav-link">Home</a>
+                <a href="../../physics.html" class="nav-link">Physics</a>
+                <a href="../../chemistry.html" class="nav-link active">Chemistry</a>
+                <a href="../../about.html" class="nav-link">About</a>
+            </div>
+            <button class="nav-mobile-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+    <div class="sim-layout">
+        <aside class="sim-sidebar">
+            <a href="../../chemistry.html" class="btn btn-secondary" style="margin-bottom: 20px; font-size: 0.875rem;">← Back to Chemistry Lab</a>
+            <h1 class="sim-title">Molecular Structure</h1>
+            <p class="sim-description">View ball-and-stick models of common molecules. Click and drag to rotate. Select a molecule to explore its geometry, bond angles, and polarity.</p>
+            <div class="control-group">
+                <h4 class="control-group-title">Select Molecule</h4>
+                <div class="control-item">
+                    <select id="molecule-select" style="width:100%; padding:10px; background:var(--bg-tertiary); color:var(--text-primary); border:1px solid var(--glass-border); border-radius:var(--radius-sm); font-family:Inter; font-size:0.875rem;">
+                        <option value="H2O">Water (H₂O)</option>
+                        <option value="CO2">Carbon Dioxide (CO₂)</option>
+                        <option value="CH4">Methane (CH₄)</option>
+                        <option value="NH3">Ammonia (NH₃)</option>
+                        <option value="O2">Oxygen (O₂)</option>
+                        <option value="N2">Nitrogen (N₂)</option>
+                        <option value="HCl">Hydrogen Chloride (HCl)</option>
+                        <option value="C2H4">Ethylene (C₂H₄)</option>
+                    </select>
+                </div>
+                <div class="control-item">
+                    <label class="control-label"><span>Rotation</span><span class="control-value" id="rot-value">0°</span></label>
+                    <input type="range" id="rot-slider" min="0" max="360" value="0" step="1">
+                </div>
+                <div class="control-item">
+                    <label class="control-label"><span>Zoom</span><span class="control-value" id="zoom-value">1.0x</span></label>
+                    <input type="range" id="zoom-slider" min="0.5" max="2" value="1" step="0.1">
+                </div>
+            </div>
+            <div class="data-display" style="margin-top: 24px;">
+                <h4 class="control-group-title" style="padding: 0 0 12px 0; margin: 0;">Molecule Info</h4>
+                <div class="data-item"><span class="data-label">Formula</span><span class="data-value" id="data-formula">H₂O</span></div>
+                <div class="data-item"><span class="data-label">Geometry</span><span class="data-value" id="data-geometry">Bent</span></div>
+                <div class="data-item"><span class="data-label">Bond Angle</span><span class="data-value" id="data-angle">104.5°</span></div>
+                <div class="data-item"><span class="data-label">Polarity</span><span class="data-value" id="data-polarity">Polar</span></div>
+                <div class="data-item"><span class="data-label">Molar Mass</span><span class="data-value" id="data-mass">18.02 g/mol</span></div>
+                <div class="data-item"><span class="data-label">Bonds</span><span class="data-value" id="data-bonds">2 O-H</span></div>
+            </div>
+        </aside>
+        <div class="sim-viewport">
+            <div class="sim-container" id="canvas-container"></div>
+        </div>
+    </div>
+    <script src="../../js/utils.js"></script>
+    <script src="molecules.js"></script>
+</body>
+</html>

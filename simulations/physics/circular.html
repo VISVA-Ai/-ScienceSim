@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circular Motion - ScienceSim</title>
+    <meta name="description" content="Interactive uniform circular motion simulation. Explore centripetal force and acceleration.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body class="physics-page">
+    <div class="bg-mesh"></div>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../../index.html" class="nav-logo"><span class="logo-icon">⚛</span><span class="logo-text">ScienceSim</span></a>
+            <div class="nav-links">
+                <a href="../../index.html" class="nav-link">Home</a>
+                <a href="../../physics.html" class="nav-link active">Physics</a>
+                <a href="../../chemistry.html" class="nav-link">Chemistry</a>
+                <a href="../../about.html" class="nav-link">About</a>
+            </div>
+            <button class="nav-mobile-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+    <div class="sim-layout">
+        <aside class="sim-sidebar">
+            <a href="../../physics.html" class="btn btn-secondary" style="margin-bottom: 20px; font-size: 0.875rem;">← Back to Physics Lab</a>
+            <h1 class="sim-title">Circular Motion</h1>
+            <p class="sim-description">Understand uniform circular motion. Observe centripetal acceleration and force as you change mass, radius, and angular velocity.</p>
+            <div class="control-group">
+                <h4 class="control-group-title">Parameters</h4>
+                <div class="control-item">
+                    <label class="control-label"><span>Mass (m)</span><span class="control-value" id="mass-value">1.0 kg</span></label>
+                    <input type="range" id="mass-slider" min="0.5" max="5" value="1" step="0.1">
+                </div>
+                <div class="control-item">
+                    <label class="control-label"><span>Radius (r)</span><span class="control-value" id="radius-value">2.0 m</span></label>
+                    <input type="range" id="radius-slider" min="0.5" max="4" value="2" step="0.1">
+                </div>
+                <div class="control-item">
+                    <label class="control-label"><span>Angular Velocity (ω)</span><span class="control-value" id="omega-value">3.0 rad/s</span></label>
+                    <input type="range" id="omega-slider" min="0.5" max="10" value="3" step="0.1">
+                </div>
+            </div>
+            <div class="sim-buttons">
+                <button class="sim-btn sim-btn-primary" id="play-btn">▶ Play</button>
+                <button class="sim-btn sim-btn-secondary" id="reset-btn">↺ Reset</button>
+            </div>
+            <div class="data-display" style="margin-top: 24px;">
+                <h4 class="control-group-title" style="padding: 0 0 12px 0; margin: 0;">Live Data</h4>
+                <div class="data-item"><span class="data-label">Linear Speed (v)</span><span class="data-value" id="data-v">0.00 m/s</span></div>
+                <div class="data-item"><span class="data-label">Centripetal Accel (aᶜ)</span><span class="data-value" id="data-ac">0.00 m/s²</span></div>
+                <div class="data-item"><span class="data-label">Centripetal Force (Fᶜ)</span><span class="data-value" id="data-fc">0.00 N</span></div>
+                <div class="data-item"><span class="data-label">Period (T)</span><span class="data-value" id="data-period">0.00 s</span></div>
+                <div class="data-item"><span class="data-label">Frequency (f)</span><span class="data-value" id="data-freq">0.00 Hz</span></div>
+                <div class="data-item"><span class="data-label">Angle (θ)</span><span class="data-value" id="data-theta">0.00°</span></div>
+            </div>
+            <div class="control-group" style="margin-top: 16px;">
+                <h4 class="control-group-title">Formulas</h4>
+                <div style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.8;">
+                    <p>v = ω·r</p>
+                    <p>aᶜ = v²/r = ω²·r</p>
+                    <p>Fᶜ = m·aᶜ = m·v²/r</p>
+                    <p>T = 2π/ω</p>
+                    <p>f = 1/T = ω/(2π)</p>
+                </div>
+            </div>
+        </aside>
+        <div class="sim-viewport">
+            <div class="sim-container" id="canvas-container"></div>
+        </div>
+    </div>
+    <script src="../../js/utils.js"></script>
+    <script src="circular.js"></script>
+</body>
+</html>

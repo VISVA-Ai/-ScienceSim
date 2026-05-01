@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics Lab - ScienceSim</title>
+    <meta name="description"
+        content="Explore physics concepts through interactive simulations including projectile motion, pendulums, waves, and more.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="physics-page">
+    <!-- Animated Background -->
+    <div class="bg-mesh"></div>
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-icon">⚛</span>
+                <span class="logo-text">ScienceSim</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="physics.html" class="nav-link active">Physics</a>
+                <a href="chemistry.html" class="nav-link">Chemistry</a>
+                <a href="about.html" class="nav-link">About</a>
+            </div>
+            <button class="nav-mobile-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hub Content -->
+    <main class="hub-page">
+        <header class="hub-header">
+            <h1 class="hub-title">
+                <span class="gradient-text">Physics</span> Lab
+            </h1>
+            <p class="hub-description">
+                Explore the fundamental laws of nature through interactive simulations.
+                Adjust parameters, observe results, and deepen your understanding.
+            </p>
+        </header>
+
+        <div class="sim-grid">
+            <!-- Projectile Motion -->
+            <a href="simulations/physics/projectile.html" class="sim-card">
+                <div class="sim-card-preview">🎯</div>
+                <h3 class="sim-card-title">Projectile Motion</h3>
+                <p class="sim-card-description">
+                    Launch projectiles and explore the effects of initial velocity,
+                    angle, and gravity on trajectory.
+                </p>
+                <span class="sim-card-btn">
+                    Launch Simulation
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </span>
+            </a>
+
+            <!-- Simple Pendulum -->
+            <a href="simulations/physics/pendulum.html" class="sim-card">
+                <div class="sim-card-preview">🕐</div>
+                <h3 class="sim-card-title">Simple Pendulum</h3>
+                <p class="sim-card-description">
+                    Study periodic motion and explore how length and gravity
+                    affect the pendulum's period.
+                </p>
+                <span class="sim-card-btn">
+                    Launch Simulation
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </span>
+            </a>
+
+            <!-- Wave Motion -->
+            <a href="simulations/physics/waves.html" class="sim-card">
+                <div class="sim-card-preview">🌊</div>
+                <h3 class="sim-card-title">Wave Motion</h3>
+                <p class="sim-card-description">
+                    Visualize transverse and longitudinal waves. Explore amplitude,
+                    frequency, and wavelength relationships.
+                </p>
+                <span class="sim-card-btn">
+                    Launch Simulation
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </span>
+            </a>
+
+            <!-- Collision -->
+            <a href="simulations/physics/collision.html" class="sim-card">
+                <div class="sim-card-preview">💥</div>
+                <h3 class="sim-card-title">Elastic Collision</h3>
+                <p class="sim-card-description">
+                    Observe momentum and energy conservation in 1D and 2D
+                    elastic collisions between objects.
+                </p>
+                <span class="sim-card-btn">
+                    Launch Simulation
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </span>
+            </a>
+
+            <!-- Spring Oscillation -->
+            <a href="simulations/physics/spring.html" class="sim-card">
+                <div class="sim-card-preview">🔄</div>
+                <h3 class="sim-card-title">Spring Oscillation</h3>
+                <p class="sim-card-description">
+                    Study simple harmonic motion with springs. Explore Hooke's Law
+                    and energy transformations.
+                </p>
+                <span class="sim-card-btn">
+                    Launch Simulation
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </span>
+            </a>
+
+            <!-- Circular Motion -->
+            <a href="simulations/physics/circular.html" class="sim-card">
+                <div class="sim-card-preview">🔃</div>
+                <h3 class="sim-card-title">Circular Motion</h3>
+                <p class="sim-card-description">
+                    Understand centripetal force and acceleration in uniform
+                    circular motion scenarios.
+                </p>
+                <span class="sim-card-btn">
+                    Launch Simulation
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </span>
+            </a>
+
+            <!-- Electric Field -->
+            <a href="simulations/physics/electric-field.html" class="sim-card">
+                <div class="sim-card-preview">⚡</div>
+                <h3 class="sim-card-title">Electric Field</h3>
+                <p class="sim-card-description">
+                    Visualize electric field lines around point charges and
+                    explore Coulomb's Law interactively.
+                </p>
+                <span class="sim-card-btn">
+                    Launch Simulation
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </span>
+            </a>
+
+            <!-- Inclined Plane -->
+            <a href="simulations/physics/incline.html" class="sim-card">
+                <div class="sim-card-preview">📐</div>
+                <h3 class="sim-card-title">Inclined Plane</h3>
+                <p class="sim-card-description">
+                    Analyze forces on inclined planes including friction,
+                    normal force, and acceleration.
+                </p>
+                <span class="sim-card-btn">
+                    Launch Simulation
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </span>
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <span class="logo-icon">⚛</span>
+                <span class="logo-text">ScienceSim</span>
+            </div>
+            <p class="footer-tagline">Making science accessible and engaging for everyone.</p>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="physics.html">Physics</a>
+                <a href="chemistry.html">Chemistry</a>
+                <a href="about.html">About</a>
+            </div>
+            <p class="footer-copy">© 2024 ScienceSim. Built for learning.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

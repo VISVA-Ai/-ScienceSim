@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chemical Equilibrium - ScienceSim</title>
+    <meta name="description" content="Interactive chemical equilibrium simulation. Explore Le Chatelier's Principle and equilibrium shifts.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body class="chemistry-page">
+    <div class="bg-mesh"></div>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../../index.html" class="nav-logo"><span class="logo-icon">⚛</span><span class="logo-text">ScienceSim</span></a>
+            <div class="nav-links">
+                <a href="../../index.html" class="nav-link">Home</a>
+                <a href="../../physics.html" class="nav-link">Physics</a>
+                <a href="../../chemistry.html" class="nav-link active">Chemistry</a>
+                <a href="../../about.html" class="nav-link">About</a>
+            </div>
+            <button class="nav-mobile-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+    <div class="sim-layout">
+        <aside class="sim-sidebar">
+            <a href="../../chemistry.html" class="btn btn-secondary" style="margin-bottom: 20px; font-size: 0.875rem;">← Back to Chemistry Lab</a>
+            <h1 class="sim-title">Chemical Equilibrium</h1>
+            <p class="sim-description">Explore Le Chatelier's Principle with a reversible reaction A + B ⇌ C. Perturb the system and watch it re-equilibrate.</p>
+            <div class="control-group">
+                <h4 class="control-group-title">Perturbations</h4>
+                <div class="sim-buttons" style="flex-wrap:wrap; gap:8px;">
+                    <button class="sim-btn sim-btn-primary" id="add-a-btn" style="font-size:0.8rem;">+ Add [A]</button>
+                    <button class="sim-btn sim-btn-primary" id="add-b-btn" style="font-size:0.8rem;">+ Add [B]</button>
+                    <button class="sim-btn sim-btn-primary" id="add-c-btn" style="font-size:0.8rem;">+ Add [C]</button>
+                    <button class="sim-btn sim-btn-secondary" id="rem-a-btn" style="font-size:0.8rem;">− Remove [A]</button>
+                    <button class="sim-btn sim-btn-secondary" id="rem-c-btn" style="font-size:0.8rem;">− Remove [C]</button>
+                </div>
+            </div>
+            <div class="control-group">
+                <h4 class="control-group-title">Temperature</h4>
+                <div class="control-item">
+                    <label class="control-label"><span>Temperature</span><span class="control-value" id="temp-value">300 K</span></label>
+                    <input type="range" id="temp-slider" min="200" max="600" value="300" step="10">
+                </div>
+                <p style="font-size:0.75rem; color:var(--text-muted); margin-top:8px;">Reaction is exothermic (forward). Higher T shifts equilibrium left.</p>
+            </div>
+            <div class="sim-buttons">
+                <button class="sim-btn sim-btn-primary" id="play-btn">▶ Play</button>
+                <button class="sim-btn sim-btn-secondary" id="reset-btn">↺ Reset</button>
+            </div>
+            <div class="data-display" style="margin-top: 24px;">
+                <h4 class="control-group-title" style="padding: 0 0 12px 0; margin: 0;">Live Data</h4>
+                <div class="data-item"><span class="data-label">[A]</span><span class="data-value" id="data-a">1.00 M</span></div>
+                <div class="data-item"><span class="data-label">[B]</span><span class="data-value" id="data-b">1.00 M</span></div>
+                <div class="data-item"><span class="data-label">[C]</span><span class="data-value" id="data-c">0.00 M</span></div>
+                <div class="data-item"><span class="data-label">Q (Reaction Quotient)</span><span class="data-value" id="data-q">0.00</span></div>
+                <div class="data-item"><span class="data-label">Kc (Eq. Constant)</span><span class="data-value" id="data-kc">—</span></div>
+                <div class="data-item"><span class="data-label">Direction</span><span class="data-value" id="data-dir">→ Forward</span></div>
+            </div>
+            <div class="control-group" style="margin-top: 16px;">
+                <h4 class="control-group-title">Formulas</h4>
+                <div style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.8;">
+                    <p>A + B ⇌ C (exothermic)</p>
+                    <p>Kc = [C] / ([A]·[B])</p>
+                    <p>Q < Kc → forward shift</p>
+                    <p>Q > Kc → reverse shift</p>
+                </div>
+            </div>
+        </aside>
+        <div class="sim-viewport">
+            <div class="sim-container" id="canvas-container"></div>
+        </div>
+    </div>
+    <script src="../../js/utils.js"></script>
+    <script src="equilibrium.js"></script>
+</body>
+</html>

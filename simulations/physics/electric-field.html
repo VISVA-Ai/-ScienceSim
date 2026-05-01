@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electric Field - ScienceSim</title>
+    <meta name="description" content="Interactive electric field simulation. Visualize field lines and explore Coulomb's Law.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body class="physics-page">
+    <div class="bg-mesh"></div>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../../index.html" class="nav-logo"><span class="logo-icon">⚛</span><span class="logo-text">ScienceSim</span></a>
+            <div class="nav-links">
+                <a href="../../index.html" class="nav-link">Home</a>
+                <a href="../../physics.html" class="nav-link active">Physics</a>
+                <a href="../../chemistry.html" class="nav-link">Chemistry</a>
+                <a href="../../about.html" class="nav-link">About</a>
+            </div>
+            <button class="nav-mobile-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+    <div class="sim-layout">
+        <aside class="sim-sidebar">
+            <a href="../../physics.html" class="btn btn-secondary" style="margin-bottom: 20px; font-size: 0.875rem;">← Back to Physics Lab</a>
+            <h1 class="sim-title">Electric Field</h1>
+            <p class="sim-description">Visualize electric field lines around point charges. Click on the canvas to place charges and see how they interact via Coulomb's Law.</p>
+            <div class="control-group">
+                <h4 class="control-group-title">Charge Settings</h4>
+                <div class="control-item">
+                    <label class="control-label"><span>Charge Magnitude</span><span class="control-value" id="charge-value">5.0 μC</span></label>
+                    <input type="range" id="charge-slider" min="1" max="20" value="5" step="0.5">
+                </div>
+                <div class="control-item">
+                    <label class="control-label"><span>Charge Sign</span><span class="control-value" id="sign-value">Positive (+)</span></label>
+                    <input type="range" id="sign-slider" min="0" max="1" value="1" step="1">
+                </div>
+                <div class="control-item">
+                    <label class="control-label"><span>Field Lines per Charge</span><span class="control-value" id="lines-value">12</span></label>
+                    <input type="range" id="lines-slider" min="6" max="24" value="12" step="2">
+                </div>
+            </div>
+            <div class="sim-buttons">
+                <button class="sim-btn sim-btn-primary" id="add-btn">➕ Click Canvas to Place</button>
+                <button class="sim-btn sim-btn-secondary" id="clear-btn">🗑 Clear All</button>
+            </div>
+            <div class="data-display" style="margin-top: 24px;">
+                <h4 class="control-group-title" style="padding: 0 0 12px 0; margin: 0;">Info</h4>
+                <div class="data-item"><span class="data-label">Charges Placed</span><span class="data-value" id="data-count">0</span></div>
+                <div class="data-item"><span class="data-label">Net Charge</span><span class="data-value" id="data-net">0 μC</span></div>
+                <div class="data-item"><span class="data-label">Field at cursor</span><span class="data-value" id="data-field">— N/C</span></div>
+                <div class="data-item"><span class="data-label">Potential at cursor</span><span class="data-value" id="data-potential">— V</span></div>
+            </div>
+            <div class="control-group" style="margin-top: 16px;">
+                <h4 class="control-group-title">Formulas</h4>
+                <div style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.8;">
+                    <p>F = k·q₁·q₂ / r²</p>
+                    <p>E = k·q / r²</p>
+                    <p>V = k·q / r</p>
+                    <p>k = 8.99 × 10⁹ N·m²/C²</p>
+                </div>
+            </div>
+        </aside>
+        <div class="sim-viewport">
+            <div class="sim-container" id="canvas-container"></div>
+        </div>
+    </div>
+    <script src="../../js/utils.js"></script>
+    <script src="electric-field.js"></script>
+</body>
+</html>
