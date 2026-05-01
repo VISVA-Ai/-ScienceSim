@@ -9,7 +9,7 @@
 [![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
 [![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
-[View Live Demo](YOUR_VERCEL_LINK_HERE) • [Report Bug](https://github.com/VISVA-Ai/-ScienceSim/issues) • [Request Feature](https://github.com/VISVA-Ai/-ScienceSim/issues)
+[View Live Demo](https://web-project-vert-five.vercel.app/) • [Report Bug](https://github.com/VISVA-Ai/-ScienceSim/issues) • [Request Feature](https://github.com/VISVA-Ai/-ScienceSim/issues)
 
 </div>
 
@@ -48,7 +48,7 @@ Discover the molecular world:
 
 The project is hosted live on Vercel. 
 
-👉 **[Experience ScienceSim Here](YOUR_VERCEL_LINK_HERE)**
+👉 **[Experience ScienceSim Here](https://web-project-vert-five.vercel.app/)**
 
 *(Note: Replace the link above with the Production URL you received in your terminal!)*
 
